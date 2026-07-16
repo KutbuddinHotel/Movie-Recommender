@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">About Movie Recommender</h1>
+        <p class="lead text-secondary">
+            A semantic content-based movie recommendation system built using Machine Learning, Natural Language
+            Processing, Flask and Python.
+        </p>
+    </div>
+
+    <hr class="mb-5">
+
+    <h2>What is this?</h2>
+
+    <p>
+        Movie Recommender is a semantic content-based recommendation system that helps users discover movies similar to
+        the ones they already enjoy. Instead of relying on popularity or user ratings, the recommendation engine
+        analyzes movie metadata such as genres, keywords, cast, director and plot descriptions to understand the overall
+        context of a movie and recommend titles with similar themes and content.
+    </p>
+
+    <hr class="my-5">
+
+    <h2>How it Works</h2>
+
+    <ul>
+        <li>Search for any movie available in the database.</li>
+        <li>Movie metadata is transformed into semantic embeddings using Sentence-BERT (SBERT).</li>
+        <li>Cosine Similarity compares the semantic representations of every movie.</li>
+        <li>The five most relevant movies are recommended.</li>
+        <li>Detailed movie information is retrieved through the TMDB API.</li>
+    </ul>
+
+    <hr class="my-5">
+
+    <h2>Why Sentence-BERT?</h2>
+
+    <p>
+        Traditional text vectorization techniques such as Bag of Words and TF-IDF rely primarily on word occurrence and
+        frequency. While they provide a strong baseline, they cannot understand the contextual meaning of text. As a
+        result, two movies describing similar ideas using different words may appear unrelated.
+    </p>
+
+    <p>
+        Sentence-BERT (SBERT) generates dense semantic embeddings that capture the meaning of an entire movie
+        description rather than simply matching common words. This enables the recommendation engine to identify movies
+        with similar themes and context, resulting in more meaningful recommendations.
+    </p>
+
+    <hr class="my-5">
+
+    <h2>Features</h2>
+
+    <ul>
+        <li>Semantic movie recommendations using Sentence-BERT embeddings.</li>
+        <li>Detailed movie information including poster, genres, runtime, director, cast and overview.</li>
+        <li>Popular Movies section on the home page.</li>
+        <li>Search suggestions for incorrect or incomplete movie titles.</li>
+        <li>Live movie metadata retrieved using the TMDB API.</li>
+    </ul>
+
+    <hr class="my-5">
+
+    <h2 class="text-center mb-4">Recommendation Pipeline</h2>
+
+    <div class="text-center">
+
+        <p class="fs-5">
+
+            Movie Dataset
+
+            <br>↓<br>
+
+            Data Cleaning
+
+            <br>↓<br>
+
+            Feature Engineering
+
+            <br>↓<br>
+
+            Tags Creation
+
+            <br>↓<br>
+
+            Sentence-BERT Embeddings
+
+            <br>↓<br>
+
+            Cosine Similarity
+
+            <br>↓<br>
+
+            Top 5 Similar Movies
+
+            <br>↓<br>
+
+            TMDB API
+
+        </p>
+
+    </div>
+
+    <hr class="my-5">
+
+    <h2>Tech Stack</h2>
+
+    <p>
+        Python • Flask • Pandas • NumPy • Sentence-BERT • Transformers • Scikit-learn • TMDB API • Bootstrap • HTML •
+        CSS • Jinja2
+    </p>
+
+    <hr class="my-5">
+
+    <h2>Future Improvements</h2>
+
+    <ul>
+        <li>Hybrid recommendation system combining content-based and collaborative filtering.</li>
+        <li>User authentication and personalized recommendations.</li>
+        <li>Watchlist and favourite movies.</li>
+        <li>Movie trailers and streaming platform availability.</li>
+        <li>User ratings and reviews.</li>
+    </ul>
+
+    <hr class="my-5">
+
+
+    <p>
+        <strong>Built by Kutbuddin Hotel</strong><br>
+        Aspiring Data Scientist
+    </p>
+
+    <p>
+        This project demonstrates the development of an end-to-end movie recommendation system using Python and Flask.
+        Movie metadata is transformed into semantic embeddings using a pre-trained Sentence-BERT (SBERT) model, and Cosine Similarity
+        is used to recommend movies with similar content. Additional movie information is retrieved through the TMDB API.
+    </p>
+
+</div>
+
+{% endblock %}

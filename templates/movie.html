@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-md-4 movie-details-card">
+            <img src="{{ movie.poster }}">
+        </div>
+
+        <div class="col-md-8">
+            
+            <div class="movie-info">
+                
+                <h1>{{ movie.title }}</h1>
+
+                <div class="movie-meta">
+
+                    <span>⭐ {{movie.rating}}</span>
+
+                    <span>📅 {{movie.release_year}}</span>
+
+                    <span>⏱ {{movie.runtime}} min</span>
+
+                </div>
+
+                <h5>Genre</h5>
+                <p>{{movie.genres|join(', ')}}</p>
+
+                <h5>Overview</h5>
+                <p>{{movie.overview}}</p>
+
+                <h5>Director</h5>
+                <p>{{movie.director}}</p>
+
+                <h5>Cast</h5>
+                <p>{{movie.cast|join(', ')}}</p>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock body %}
