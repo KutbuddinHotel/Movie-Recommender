@@ -22,19 +22,6 @@ def fetch_movie_data(movie_id):
 
     credits_url = f"https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key={API_KEY}"
     credits_data = requests.get(credits_url).json()
-
-     # ----- Debugging -----
-    print(f"Movie ID: {movie_id}")
-    print("Movie Response:")
-    print(movie_data)
-    print("Credits Response:")
-    print(credits_data)
-
-    # Check whether "cast" exists
-    if "cast" not in credits_data:
-        print(f"Missing cast for movie {movie_id}")
-        print(credits_data)
-    # ---------------------
     
     cast = [cast["name"] for cast in credits_data["cast"][:5]]
     
@@ -76,7 +63,7 @@ def index():
 
             if suggestion:
 
-                return render_template("index.html", popular_movies=popular_movies, suggestion=suggestion)
+                return render_template("index.html", popular_movies=popular_movies, suggestion=suggestion, searched_movie=movie)
 
             return render_template("index.html", popular_movies=popular_movies, error="Movie not found.")
     
@@ -94,9 +81,9 @@ def index():
                 "genres": movie_data["genres"],
                 "poster": movie_data["poster"]})
             
-        return render_template("index.html", recommendations=recommendations, popular_movies=popular_movies)
+        return render_template("index.html", recommendations=recommendations, popular_movies=popular_movies, searched_movie=movie)
     
-    return render_template("index.html", popular_movies=popular_movies)
+    return render_template("index.html", popular_movies=popular_movies, searched_movie="")
 
 
 @app.route("/movie/<int:movie_id>")
