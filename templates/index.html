@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
 
+<!-- Popular Movies Section -->
 <div class="container main-heading mt-2">
     <h2 class="mb-1 text-center ">Popular Movies</h2>
     <p class="text-center mb-4">Top movies based on TMDB popularity.</p>
@@ -13,7 +14,7 @@
 
             <div class="movie-card">
 
-                <img src={{movie.poster}}>
+                <img src={{movie.poster}} alt="{{movie.title}}">
 
                 <div class="movie-info">
                     <h5>{{movie.title}}</h5>
@@ -30,6 +31,8 @@
 
 </div>
 
+
+<!-- Movie Search Form -->
 <div class="container main-heading">
 
     <h2 class="mt-4 mb-1 text-center">Movie Recommender</h2>
@@ -43,9 +46,10 @@
 
         <div class="input-group">
 
-            <input type="text" class="form-control" name="movie" placeholder="Search for a movie...." value="{{searched_movie}}">
+            <input type="text" class="form-control" name="movie" placeholder="Search for a movie...."
+                value="{{searched_movie}}">
 
-            <button class="btn btn-danger">
+            <button type="submit" class="btn btn-danger">
                 Recommend
             </button>
 
@@ -56,6 +60,7 @@
 </div>
 
 
+<!-- Display error message if no matching movie is found -->
 {% if error %}
 <div class="alert alert-warning mt-3 w-50 mx-auto">
     {{error}}
@@ -63,6 +68,7 @@
 {% endif %}
 
 
+<!-- Display closest matching movie titles -->
 {% if suggestion %}
 
 <div class="mt-3 text-center">
@@ -90,6 +96,7 @@
 {% endif %}
 
 
+<!-- Recommended Movies -->
 {% if recommendations %}
 
 <div class="container mt-5">
@@ -100,11 +107,11 @@
 
         {% for movie in recommendations %}
 
-        <a href="/movie/{{movie.movie_id}}" , class="movie-link">
+        <a href="/movie/{{movie.movie_id}}" class="movie-link">
 
             <div class="movie-card">
 
-                <img src={{movie.poster}}>
+                <img src={{movie.poster}} alt="{{movie.title}}">
 
                 <div class="movie-info">
                     <h5>{{movie.title}}</h5>
@@ -117,9 +124,10 @@
 
         {% endfor %}
 
-        {% endif %}
     </div>
 
 </div>
+
+{% endif %}
 
 {% endblock body %}
