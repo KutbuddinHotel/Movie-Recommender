@@ -86,11 +86,11 @@ The recommendation engine was later upgraded to Sentence-BERT (SBERT), which gen
 
 ---
 
-### Project Structure
+## Project Structure
 
 ```text
 Movie-Recommender-System/
-│
+
 ├── app.py
 ├── requirements.txt
 ├── Procfile
@@ -98,19 +98,35 @@ Movie-Recommender-System/
 ├── .gitignore
 ├── .env.example
 │
-├── model/
-│   ├── new_df.pkl
-│   ├── similarity_SBERT.pkl
-│   └── popular_movies.pkl
+├── assets/
+│   └── screenshots/
+│       ├── home.png
+│       ├── recommendations.png
+│       ├── movie_details.png
+│       ├── about.png
+│       ├── recommendations_BoW.png
+│       └── recommendations_SBERT.png
 │
 ├── notebooks/
-│   ├── Movie_Recommender_Preprocessing.ipynb
 │   ├── Movie_Recommender_Bag_of_Words.ipynb
-│   └── Movie_Recommender_SBERT.ipynb
+│   ├── Movie_Recommender_SBERT.ipynb
+│   ├── PopularMovies_and_DataPreprocessing.ipynb
+│   ├── tmdb_5000_movies.csv
+│   └── tmdb_5000_credits.csv
 │
 ├── static/
+│   └── css/
+│       └── style.css
 │
-└── templates/
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   ├── movie.html
+│   └── about.html
+│
+├── new_df.pkl
+├── popular_movies.pkl
+└── similarity_SBERT.pkl
 ```
 
 ---
@@ -183,8 +199,6 @@ http://127.0.0.1:5000
 
 #### Home Page
 
-## Home Page
-
 ![Home Page](assets/screenshots/home.png)
 
 #### Recommendations
@@ -246,4 +260,4 @@ Sentence-BERT (SBERT) generates semantic embeddings that represent the overall m
 
 Kutbuddin Hotel
 
-This project was developed as a portfolio project to learn and implement content-based recommendation systems using Python, Flask, and modern text embedding techniques.
+This project was developed as a portfolio project to learn and implement content-based recommendation systems using Python and Flask.
