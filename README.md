@@ -256,8 +256,6 @@ Sentence-BERT (SBERT) generates semantic embeddings that represent the overall m
 
 ---
 
-### Author
-
-Kutbuddin Hotel
+### Built by Kutbuddin Hotel
 
 This project was developed as a portfolio project to learn and implement content-based recommendation systems using Python and Flask.
